@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manganisi AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Top Nav -->
+        <nav class="top-nav">
+            <div class="nav-brand">
+                <i>✦</i> MANGANISI AI
+            </div>
+            <div class="nav-links">
+                <button class="nav-item active" data-target="overview">HOME</button>
+                <button class="nav-item" data-target="exploration">EXPLORATION</button>
+                <button class="nav-item" data-target="global-heatmap">GLOBAL MAP</button>
+                <button class="nav-item" data-target="jarvis-ai">MANGANISI AI</button>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-primary">CLIENT PORTAL</a>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- View: Overview -->
+            <div class="view active" id="overview" style="padding: 0;">
+                
+                <!-- Hero Section matching reference image perfectly -->
+                <div class="overview-hero">
+                    <div class="hero-bg-image"></div>
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1 class="hero-title">Optimizing Global<br>Manganese Extraction</h1>
+                        <p class="hero-mission mt-4">
+                            We map, analyze, and optimize high-purity reserves worldwide using advanced satellite AI to power tomorrow's clean energy technologies.
+                        </p>
+                        <button class="btn btn-primary mt-6 btn-large" onclick="document.querySelectorAll('.nav-item')[1].click()">GET STARTED</button>
+                    </div>
+                    <!-- Curved Wave Divider -->
+                    <div class="custom-shape-divider-bottom">
+                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,120.34,201.5,110.22,242.71,104.35,283.47,82.88,321.39,56.44Z" class="shape-fill"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="overview-content">
+                    
+                    <!-- Welcome / Intro text -->
+                    <div class="intro-section mb-8">
+                        <h2>Welcome to the next generation of <strong>global extraction</strong>.</h2>
+                        <p class="text-muted mt-4" style="max-width: 600px; margin: 1rem auto; line-height: 1.6;">Powered by public data from ISRO and NASA, the proprietary Manganisi Core AI identifies and analyzes high-purity manganese reserves globally to accelerate clean energy supply chains.</p>
+                        <p class="text-muted mt-4"><strong>Core capabilities of the platform:</strong></p>
+                    </div>
+
+                    <!-- KPI Circles matching reference image exactly -->
+                    <div class="kpi-circles mt-8 mb-8">
+                        <div class="circle-item">
+                            <div class="icon-circle" style="background: #20c997;">⛁</div>
+                            <h4>Global Yield</h4>
+                            <p>Optimizing extraction and tracking sites globally to ensure 1,350 T/day of high-grade ore.</p>
+                        </div>
+                        <div class="circle-item">
+                            <div class="icon-circle" style="background: #6f42c1;">⚡</div>
+                            <h4>Productivity</h4>
+                            <p>Productivity is the output of an operation, which we monitor and boost via AI.</p>
+                        </div>
+                        <div class="circle-item">
+                            <div class="icon-circle" style="background: #007bff;">⚙</div>
+                            <h4>Efficiency</h4>
+                            <p>I will help you increase your operational efficiency by focusing on logistics and purity.</p>
+                        </div>
+                    </div>
+
+                    <!-- Bento Grid for Charts (adapted for Light mode) -->
+                    <h3 class="mt-8 mb-6 text-center" style="color: var(--text-primary); font-weight: 300;">What is <strong>Manganisi Core</strong>?</h3>
+                    <div class="bento-grid-advanced mt-6">
+                        <div class="card bento-main-chart">
+                            <span class="card-label">7-Day Extraction Trend</span>
+                            <div class="chart-wrapper">
+                                <canvas id="productionChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="card bento-radar">
+                            <span class="card-label">Operational Efficiency</span>
+                            <div id="radarChart" style="width: 100%; height: 250px;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Partners -->
+                    <div class="partners-section mt-8">
+                        <div class="partner-logos">
+                            <div class="partner-logo">NASA API</div>
+                            <div class="partner-logo">ISRO API</div>
+                            <div class="partner-logo">ORE ORG. OF INDIA</div>
+                            <div class="partner-logo">WORLD ORE ORG.</div>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="company-footer mt-8">
+                        FOUNDERS: RAHUL AND LOKESH
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View: Exploration -->
+            <div class="view" id="exploration">
+                <div class="view-header">
+                    <h1 style="color: var(--text-primary);">Exploration Network</h1>
+                    <p class="text-muted">Initiate multi-spectral scanning.</p>
+                </div>
+                <div class="exploration-layout mt-4">
+                    <!-- Left Sidebar Console -->
+                    <div class="explore-sidebar card">
+                        <div class="sidebar-header">
+                            <h3 style="color: var(--text-primary);">Operations Console</h3>
+                        </div>
+                        
+                        <div class="scan-controls mt-6" id="scan-controls">
+                            <div class="filter-group mb-4">
+                                <label><input type="checkbox" checked id="filter-high"> High Priority</label>
+                                <label><input type="checkbox" checked id="filter-med"> Medium Priority</label>
+                                <label><input type="checkbox" checked id="filter-low"> Low Priority</label>
+                            </div>
+                            <button id="btn-run-scan" class="btn btn-primary btn-full">INITIATE DEEP SCAN</button>
+                        </div>
+
+                        <div id="terminal-log" class="terminal-log hidden mt-4" style="background:#f8f9fa; color:#333; border: 1px solid #e0e4e8;"></div>
+
+                        <div id="detected-zones-list" class="detected-zones hidden mt-6">
+                            <label class="text-xs text-muted mb-2 block">DETECTED ZONES</label>
+                            <div id="zone-list-container"></div>
+                        </div>
+                    </div>
+
+                    <!-- Right Map Area -->
+                    <div class="map-wrapper card p-0">
+                        <div id="map" class="map-container"></div>
+                        
+                        <div id="ai-scanner" class="ai-scan-overlay" style="background: rgba(255,255,255,0.85);">
+                            <div class="scanner-ui text-center">
+                                <h2 class="pulse-text" style="color:#007bff; font-weight:bold;">AWAITING COMMAND</h2>
+                            </div>
+                        </div>
+
+                        <div id="ai-panel" class="floating-panel hidden" style="background: rgba(255,255,255,0.95); color: #333; border: 1px solid #e0e4e8;">
+                            <div id="panel-empty" class="panel-empty text-center text-muted mt-6">Select a Zone on the map</div>
+                            <div id="ai-panel-content" class="hidden">
+                                <div class="panel-header" style="display:flex; justify-content:space-between; margin-bottom: 10px;">
+                                    <h3 id="zone-name" style="margin:0; color:#333;">Zone</h3>
+                                    <span id="zone-priority" class="tag" style="background:#e0e4e8; color:#333; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem;">Pri</span>
+                                </div>
+                                <div class="score-display">
+                                    <div id="zone-score" class="score-value" style="font-size: 3rem; color: #007bff; font-weight: bold;">87</div>
+                                </div>
+                                <p id="zone-desc" class="text-sm text-muted mt-2 mb-4"></p>
+                                <div class="insights mt-4">
+                                    <ul id="zone-reasons" class="insight-list" style="padding-left:0; list-style:none;"></ul>
+                                </div>
+                                <button id="btn-google-maps" class="btn btn-outline-primary btn-full mt-4" style="margin-bottom: 8px; border-width: 2px; font-weight: bold;">OPEN IN GOOGLE MAPS</button>
+                                <button id="btn-street-view" class="btn btn-outline-primary btn-full" style="background: var(--primary); color: #fff;">LAUNCH 3D GOOGLE EARTH</button>
+                            </div>
+                        </div>
+
+                        <!-- 3D Street View Modal has been moved to root body level -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Heatmap -->
+            <div class="view" id="global-heatmap">
+                <div class="view-header">
+                    <h1 style="color: var(--text-primary);">Global Reserves</h1>
+                    <p class="text-muted">Real-Time Data Stream via ISRO</p>
+                </div>
+                <div class="card p-0 mt-4" style="height: 600px;">
+                    <div id="echarts-world-map" style="width: 100%; height: 100%;"></div>
+                </div>
+            </div>
+
+            <!-- Manganisi AI -->
+            <div class="view" id="jarvis-ai">
+                <div class="view-header">
+                    <h1 style="color: var(--text-primary);">Manganisi AI Core</h1>
+                    <p class="text-muted">Neural Processing & Terrain Anomaly Detection</p>
+                </div>
+                <div class="jarvis-grid mt-4" style="display: grid; grid-template-columns: 1fr 2fr; gap: 24px;">
+                    <div class="card p-0" style="overflow: hidden; text-align: center; padding: 20px !important;">
+                        <span class="card-label block mt-2 mb-2">PROPRIETARY NEURAL ENSEMBLE</span>
+                        <div class="ai-ensemble" style="display:flex; justify-content: space-between; align-items: center; position: relative; padding: 20px 0; height: 180px;">
+                            <div style="display: flex; flex-direction: column; gap: 15px; z-index: 2;">
+                                <div class="ai-node">Claude<br><span>Context & Strategy</span></div>
+                                <div class="ai-node">ChatGPT<br><span>Logic Processing</span></div>
+                            </div>
+                            
+                            <div class="ai-center-node" style="z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem; box-shadow: 0 0 25px rgba(0,123,255,0.4);">MANGANISI</div>
+                            </div>
+                        
+                            <div style="display: flex; flex-direction: column; gap: 15px; z-index: 2;">
+                                <div class="ai-node">Gemini<br><span>Multi-Modal Vision</span></div>
+                                <div class="ai-node">DeepSeek<br><span>Advanced Computing</span></div>
+                            </div>
+                        
+                            <svg style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1;" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="20%" y1="25%" x2="50%" y2="50%" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="5,5" class="data-stream" />
+                                <line x1="20%" y1="75%" x2="50%" y2="50%" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="5,5" class="data-stream" />
+                                <line x1="80%" y1="25%" x2="50%" y2="50%" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="5,5" class="data-stream" />
+                                <line x1="80%" y1="75%" x2="50%" y2="50%" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="5,5" class="data-stream" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-4 mb-2" style="color: #007bff; font-size: 1rem;">ALL PARAMETERS SYNCHRONIZED</h3>
+                    </div>
+                    <div class="card">
+                        <span class="card-label">Active Processes</span>
+                        <div id="continuous-log" class="mt-4" style="height: 220px; overflow-y:auto; color: #555; font-family: 'Courier New', monospace; font-size: 0.85rem; line-height:1.6;"></div>
+                    </div>
+                    <div class="card" style="grid-column: 1 / 3;">
+                        <span class="card-label">Neural Predictions vs Actual</span>
+                        <div style="height: 300px; margin-top: 20px;">
+                            <div id="jarvisCrazyChart" style="width: 100%; height: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts-gl@2.0.9/dist/echarts-gl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+    <script src="js/app.js"></script>
+    <!-- 3D Street View Modal (Moved to Root for full screen overlay) -->
+    <div id="street-view-modal" class="hidden" style="position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999; display:flex; justify-content:center; align-items:center; padding: 40px;">
+        <div class="modal-window card p-0" style="width:100%; max-width: 1200px; height:80vh; display:flex; flex-direction:column; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+            <div class="modal-header" style="background: #fff; border-bottom: 1px solid #eee; padding: 20px 30px; display:flex; justify-content:space-between; align-items:center; border-radius: 12px 12px 0 0;">
+                <h3 style="color:#333; margin:0; font-size:1.4rem;">Live 3D Satellite Feed</h3>
+                <button id="btn-close-modal" class="btn-close" style="color:#333; background:none; border:none; font-size:1.8rem; cursor:pointer;">✕</button>
+            </div>
+            <div class="modal-body" style="flex:1; background: #eee; border-radius: 0 0 12px 12px; overflow:hidden;">
+                <iframe id="google-maps-iframe" src="" width="100%" height="100%" frameborder="0" style=\"border:0;\" allowfullscreen=\"\"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
