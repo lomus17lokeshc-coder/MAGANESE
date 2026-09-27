@@ -1,5 +1,8 @@
 # ✦ Manganisi AI (Manganese-X | AI Core)
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flomus17lokeshc-coder%2FMAGANESE)
+**Live Demo:** *(Add your deployed Vercel link here!)*
+
 **Optimizing Global Manganese Extraction via Advanced Satellite AI.**
 
 ![Manganisi AI Concept](manganisi_dashboard.jpg)
